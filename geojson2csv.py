@@ -2,6 +2,7 @@ import json
 import csv
 import argparse
 import sys
+import os
 
 
 def main(args):
@@ -18,7 +19,7 @@ def parse_feature_collection(features, outfile):
     # We want to flatten those out
 
     # create the csv writer object
-    csvwriter = csv.writer(outfile)
+    csvwriter = csv.writer(outfile, lineterminator=os.linesep)
 
     count = 0
     # We'd like to save the first header we see, to maintain the exact same ordering, in case
